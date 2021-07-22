@@ -223,7 +223,7 @@ let aswers = [];
 
 const RigthAnswers = {"1":"flodhäst", "2":"flodhäst", "3":"cat"};
 
-//adds answers to answersarray from 'radioinput'
+//Adds answers to answersarray from 'radioinput'
 function AddFormDataToArray(data){
 
     
@@ -244,7 +244,7 @@ let Print = (SomeString) => {
     
 
 
-//checks right or wrong answers by comparing all keyvalues with users answers and adds icons for right or wrong answers 
+//Checks right or wrong answers by comparing all keyvalues with users answers and adds icons for right or wrong answers 
 OutputCorrectAnswrs = () => {
 
   let fontaws;
@@ -266,7 +266,7 @@ OutputCorrectAnswrs = () => {
               fontaws = "fa-times";
               mycolor ="red";
         }
-        //displ fontawesome
+        //display fontawesome
         elem.classList.add("fas", fontaws, "fa-2x");
         elem.style.color = mycolor;
     }

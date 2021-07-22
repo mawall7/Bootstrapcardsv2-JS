@@ -211,12 +211,12 @@
       </div>
     </div>
 </div>
-      <script>
 
-//adds answers to answersarray from 'radioinput'
-
+<script>
+//Frågor om djur
 let aswers = [];
 
+//adds answers to answersarray from 'radioinput'
 function AddFormDataToArray(data){
 
     
@@ -227,10 +227,31 @@ for (var [value,name] of data) {
   }
 };
 
+//checks right or wrong answers by comparing all keyvalues with users answers and adds icons for right or wrong answers 
+OutputCorrectAnswrs = () => {
+  
+  for(var key in RigthAnswers){
+    
+        console.log(RigthAnswers[key]);
+        elem = document.getElementById(key);
+        
+        if (RigthAnswers[key] == answers[key-1])
+        { 
+          correctanswrs+=1;
+          
+        }
+        else {correctanswrs = correctanswrs; 
+       }
+         
+}}
+
+
 document.getElementById("submitbutn").addEventListener("click", function(e) {
   e.preventDefault();
 
   answers = [];
+  const RigthAnswers = {"1":"flodhäst", "2":"flodhäst", "3":"cat"};
+  let correctanswrs = 0;
   
   let form1 = document.getElementById("form1");
   let form2 = document.getElementById("form2");
@@ -245,12 +266,12 @@ document.getElementById("submitbutn").addEventListener("click", function(e) {
   AddFormDataToArray(data2);
   AddFormDataToArray(data3);
 
-  console.log(answers.value);
-
- 
+  console.log(answers);
 
 }
 )
+
+
 
 
             
@@ -356,7 +377,7 @@ catch(error){
         //       });
               
         //   }
-      </script>
+</script>
     
 </body>
 </html>

@@ -235,10 +235,13 @@ for (var [value,name] of data) {
 };
 
 
-let Print = (SomeString) => {
+let Print = (SomeString, cons, screen) => {
       
-    console.log("Antal rätta svar" + SomeString);
-    document.getElementById("Output").innerHTML = "Antalet Rätta svar :" + SomeString + "av 3";
+    if (cons == true) console.log("Antal rätta svar" + SomeString);
+        else (null)
+    if (screen == true){
+        document.getElementById("Output").innerHTML = "Antalet Rätta svar :" + SomeString + "av 3";
+    }
 }
       
     
@@ -270,7 +273,7 @@ OutputCorrectAnswrs = () => {
         elem.classList.add("fas", fontaws, "fa-2x");
         elem.style.color = mycolor;
     }
-    Print(correctanswrs);
+    Print(correctanswrs, true, true);
 }
       
 

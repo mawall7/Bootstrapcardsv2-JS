@@ -213,8 +213,13 @@
 </div>
 
 <script>
+
 //Frågor om djur
+
+let correctanswrs = 0;
 let aswers = [];
+
+const RigthAnswers = {"1":"flodhäst", "2":"flodhäst", "3":"cat"};
 
 //adds answers to answersarray from 'radioinput'
 function AddFormDataToArray(data){
@@ -266,7 +271,8 @@ document.getElementById("submitbutn").addEventListener("click", function(e) {
   AddFormDataToArray(data2);
   AddFormDataToArray(data3);
 
-  console.log(answers);
+  OutputCorrectAnswrs();
+//   console.log(answers);
 
 }
 )

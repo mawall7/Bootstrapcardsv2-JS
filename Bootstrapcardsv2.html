@@ -131,7 +131,7 @@
       <input type="radio" id="djur2" name="djur1" value="flodhäst">
       <label for="flodhäst">flodhäst&nbsp;<i class="fas fa-hippo"></i>&nbsp;&nbsp;</label>
       <input type="radio" id="djur3" name="djur1" value="groda">
-      <label for="groda">groda&nbsp;  <i class="fas fa-frog"></i>&nbsp;&nbsp;</label>
+      <label for="groda">groda&nbsp;  <i class="fas fa-frog"></i>&nbsp;&nbsp;</label><i id="1"> </i>
       <!-- <button id="submitbutn1" type="submit" value="Submit" style="float: right;">skicka!</button> -->
 </form>
 
@@ -143,7 +143,7 @@
           <input type="radio" name="djur" value="flodhäst">
           <label for="flodhäst">flodhäst&nbsp;<i class="fas fa-hippo"></i>&nbsp;&nbsp;</label>
           <input type="radio" name="djur" value="groda">
-          <label for="groda">groda  <i class="fas fa-frog"></i>&nbsp;&nbsp;</label>
+          <label for="groda">groda  <i class="fas fa-frog"></i>&nbsp;&nbsp;</label><i id="2"> </i>
     </form>
        
     <form id ="form3">
@@ -153,9 +153,11 @@
         <input type="radio" name="djur" value="flodhäst">
         <label for="flodhäst">flodhäst&nbsp;<i class="fas fa-hippo"></i>&nbsp;&nbsp;</label>
         <input type="radio" name="djur" value="groda">
-        <label for="groda">groda&nbsp;<i class="fas fa-frog"></i>&nbsp;&nbsp;</label>
+        <label for="groda">groda&nbsp;<i class="fas fa-frog"></i>&nbsp;&nbsp;</label><i id="3"> </i>
         <button id="submitbutn" type="submit" value="">Submit!</button>
     </form>
+
+    <br><p id="Output">Antal rätt: </p>
 
 </div>
    </div>
@@ -232,8 +234,21 @@ for (var [value,name] of data) {
   }
 };
 
+
+let Print = (SomeString) => {
+      
+    console.log("Antal rätta svar" + SomeString);
+    document.getElementById("Output").innerHTML = "Antalet Rätta svar :" + SomeString + "av 3";
+}
+      
+    
+
+
 //checks right or wrong answers by comparing all keyvalues with users answers and adds icons for right or wrong answers 
 OutputCorrectAnswrs = () => {
+
+  let fontaws;
+  let mycolor;
   
   for(var key in RigthAnswers){
     
@@ -243,12 +258,22 @@ OutputCorrectAnswrs = () => {
         if (RigthAnswers[key] == answers[key-1])
         { 
           correctanswrs+=1;
+          fontaws = "fa-check";
+          mycolor = "green";
           
         }
         else {correctanswrs = correctanswrs; 
-       }
-         
-}}
+              fontaws = "fa-times";
+              mycolor ="red";
+        }
+        //displ fontawesome
+        elem.classList.add("fas", fontaws, "fa-2x");
+        elem.style.color = mycolor;
+    }
+    Print(correctanswrs);
+}
+      
+
 
 
 document.getElementById("submitbutn").addEventListener("click", function(e) {

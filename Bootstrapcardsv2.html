@@ -44,6 +44,11 @@
           padding-bottom: 20px;
         } 
 
+        .mycontainer{
+            
+            margin: 64px;
+        }
+
         /* Tooltip container */
 
 
@@ -82,7 +87,7 @@
 </head>
 <body>
  
- <div class="container">
+ <div class="mycontainer">
   <!-- <div class="myborder"> -->
     <div class="row myborder"> 
  
@@ -166,7 +171,7 @@
 <div>
 <hr>
 
-<div class="row myborder">
+<div class="row myborder m-5">
   <div class="d-flex flex-column">
   <br>
   
@@ -234,7 +239,7 @@ for (var [value,name] of data) {
   }
 };
 
-
+//Print number of correct answers to screen or console
 let Print = (SomeString, cons, screen) => {
       
     if (cons == true) console.log("Antal rätta svar" + SomeString);

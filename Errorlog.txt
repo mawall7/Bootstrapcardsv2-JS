@@ -1,3 +1,7 @@
-Uncaught syntax error : unexpected end of input - löst
+- Uncaught syntax error : unexpected end of input - löst
 
 funktionen OutputCorrectanswers saknade en slutparantes
+
+- Cannot GET / favicon.ico
+
+La till den här raden i head : <link rel="shortcut icon" href="#" />
